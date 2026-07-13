@@ -17,13 +17,6 @@ if ('IntersectionObserver' in window && !prefersReducedMotion.matches) {
   revealItems.forEach((item) => item.classList.add('is-visible'));
 }
 
-const image = document.querySelector('.product__image');
-if (image) {
-  const showImageFallback = () => image.classList.add('is-unavailable');
-  image.addEventListener('error', showImageFallback, { once: true });
-  if (image.complete && image.naturalWidth === 0) showImageFallback();
-}
-
 document.querySelectorAll('video').forEach((video) => {
   const showVideoFallback = () => video.classList.add('is-unavailable');
   video.addEventListener('error', showVideoFallback, { once: true });
